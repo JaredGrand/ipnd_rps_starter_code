@@ -65,6 +65,8 @@ class Game:
         self.p2.learn(move2, move1)
 
     def play_game(self):
+        self.p1.wins = 0
+        self.p2.wins = 0
         print("Game start!")
         for round in range(3):
             print(f"Round {round}:")
