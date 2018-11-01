@@ -75,8 +75,9 @@ class Game:
     def play_game(self):
         self.p1.wins = 0
         self.p2.wins = 0
+        rounds = int(input("How many rounds? "))
         print("Game start!")
-        for round in range(3):
+        for round in range(rounds):
             print(f"Round {round + 1}:")
             self.play_round()
             print(" ")
