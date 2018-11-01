@@ -33,6 +33,14 @@ class RandomPlayer(Player):
         outcomes = ['rock', 'paper', 'scissors']
         return random.choice(outcomes)
 
+class HumanPlayer(Player):
+
+    def move(self):
+        throw = input("Throw rock, paper, or scissors? ")
+        while throw not in ['rock', 'paper', 'scissors']:
+            throw = input("Throw rock, paper, or scissors? ")
+        return throw
+
 
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
