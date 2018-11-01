@@ -83,6 +83,12 @@ class Game:
             self.play_round()
             print(" ")
         print("Game over!")
+        if self.p1.wins > self.p2.wins:
+            print("Player 1 wins!")
+        elif self.p1.wins < self.p2.wins:
+            print("Player 2 wins!")
+        else:
+            print("The players tied!")
 
 
 if __name__ == '__main__':
