@@ -55,9 +55,12 @@ class Game:
         if move1 == move2:
             print("The players tied!")
         elif beats(move1, move2):
+            self.p1.score()
             print("Player 1 wins!")
         else:
+            self.p2.score()
             print("Player 2 wins!")
+        print(f"Score: Player 1: {self.p1.wins}  Player 2: {self.p2.wins}")
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
 
