@@ -69,8 +69,9 @@ class Game:
         self.p2.wins = 0
         print("Game start!")
         for round in range(3):
-            print(f"Round {round}:")
+            print(f"Round {round + 1}:")
             self.play_round()
+            print(" ")
         print("Game over!")
 
 
