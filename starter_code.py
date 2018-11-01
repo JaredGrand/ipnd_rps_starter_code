@@ -18,6 +18,11 @@ class Player:
     def learn(self, my_move, their_move):
         pass
 
+class RandomPlayer(Player):
+    def move(self):
+        outcomes = ['rock', 'paper', 'scissors']
+        return random.choice(outcomes)
+
 
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
