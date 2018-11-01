@@ -14,7 +14,7 @@ in this game"""
 class Player:
 
     def __init__(self):
-        self.count = 0
+        self.wins = 0
 
     def move(self):
         return 'rock'
@@ -22,7 +22,13 @@ class Player:
     def learn(self, my_move, their_move):
         pass
 
+    def score(self):
+        self.wins += 1
+
 class RandomPlayer(Player):
+    def __init__(self):
+        self.wins = 0
+
     def move(self):
         outcomes = ['rock', 'paper', 'scissors']
         return random.choice(outcomes)
@@ -38,6 +44,8 @@ class Game:
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
+        self.wins = 0
+
 
 
     def play_round(self):
