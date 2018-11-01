@@ -12,6 +12,10 @@ in this game"""
 
 
 class Player:
+
+    def __init__(self):
+        self.count = 0
+
     def move(self):
         return 'rock'
 
