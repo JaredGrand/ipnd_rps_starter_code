@@ -39,6 +39,7 @@ class Game:
         self.p1 = p1
         self.p2 = p2
 
+
     def play_round(self):
         move1 = self.p1.move()
         move2 = self.p2.move()
