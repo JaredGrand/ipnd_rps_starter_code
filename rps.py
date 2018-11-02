@@ -25,6 +25,7 @@ class Player:
     def score(self):
         self.wins += 1
 
+
 class RandomPlayer(Player):
     def __init__(self):
         self.wins = 0
@@ -32,6 +33,7 @@ class RandomPlayer(Player):
     def move(self):
         outcomes = ['rock', 'paper', 'scissors']
         return random.choice(outcomes)
+
 
 class HumanPlayer(Player):
 
@@ -41,11 +43,11 @@ class HumanPlayer(Player):
             throw = input("Throw rock, paper, or scissors? ")
         return throw
 
+
 class ReflectPlayer(Player):
 
     def __init__(self):
         self.their_move = ''
-
 
     def learn(self, my_move, their_move):
         self.their_move = their_move
@@ -57,6 +59,7 @@ class ReflectPlayer(Player):
         else:
             throw = self.their_move
         return throw
+
 
 class CyclePlayer(Player):
 
@@ -90,8 +93,6 @@ class Game:
         self.p1 = p1
         self.p2 = p2
         self.wins = 0
-
-
 
     def play_round(self):
         move1 = self.p1.move()
