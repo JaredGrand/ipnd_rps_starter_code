@@ -87,6 +87,18 @@ def beats(one, two):
             (one == 'scissors' and two == 'paper') or
             (one == 'paper' and two == 'rock'))
 
+def define_players():
+    ans1 = input("Define Player1: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? ")
+    if ans1 == 'H':
+        p1 = 'HumanPlayer'
+    elif ans1 = 'Ra':
+        p1 = 'RandomPlayer'
+    elif ans1 = 'Re':
+        p1 = 'ReflectPlayer'
+    elif ans1 = 'C':
+        p1 = 'CyclePlayer'
+    else
+
 
 class Game:
     def __init__(self, p1, p2):
