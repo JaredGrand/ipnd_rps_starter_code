@@ -41,6 +41,23 @@ class HumanPlayer(Player):
             throw = input("Throw rock, paper, or scissors? ")
         return throw
 
+class ReflectPlayer(Player):
+
+    def __init__(self):
+        self.their_move = ''
+
+
+    def learn(self, my_move, their_move):
+        self.their_move = their_move
+        return self.their_move
+
+    def move(self):
+        if self.their_move == '':
+            throw = random.choice(['rock', 'paper', 'scissor'])
+        else:
+            throw = self.their_move
+        return throw
+
 
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
