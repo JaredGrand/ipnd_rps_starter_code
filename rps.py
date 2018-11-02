@@ -58,6 +58,26 @@ class ReflectPlayer(Player):
             throw = self.their_move
         return throw
 
+class CyclePlayer(Player):
+
+    def __init__(self):
+        self.my_move = ''
+
+    def learn(self, my_move, their_move):
+        self.my_move = my_move
+        return self.my_move
+
+    def move(self):
+        if self.my_move == '':
+            throw = random.choice(['rock', 'paper', 'scissors'])
+        elif self.my_move == 'rock':
+            throw = 'paper'
+        elif self.my_move == 'paper':
+            throw = 'scissors'
+        else:
+            throw = 'rock'
+        return throw
+
 
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
