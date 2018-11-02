@@ -88,16 +88,18 @@ def beats(one, two):
             (one == 'paper' and two == 'rock'))
 
 def define_players():
-    ans1 = input("Define Player1: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? ")
+    ans1 = input("Define Player1: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? ").upper()
+    while ans1 not in ['H', 'RA', 'RE', 'C']:
+        ans1 = input("Define Player1: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? ").upper()
     if ans1 == 'H':
         p1 = 'HumanPlayer'
-    elif ans1 = 'Ra':
+    elif ans1 == 'RA':
         p1 = 'RandomPlayer'
-    elif ans1 = 'Re':
+    elif ans1 == 'RE':
         p1 = 'ReflectPlayer'
-    elif ans1 = 'C':
+    else:
         p1 = 'CyclePlayer'
-    else
+    return p1
 
 
 class Game:
