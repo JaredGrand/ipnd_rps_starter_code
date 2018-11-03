@@ -87,10 +87,12 @@ def beats(one, two):
             (one == 'scissors' and two == 'paper') or
             (one == 'paper' and two == 'rock'))
 
+
 def define_players():
-    ans1 = input("Define Player: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? ").upper()
+    str1 = "Define Player: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? "
+    ans1 = input(str1).upper()
     while ans1 not in ['H', 'RA', 'RE', 'C']:
-        ans1 = input("Define Player1: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? ").upper()
+        ans1 = input(str1).upper()
     if ans1 == 'H':
         p1 = HumanPlayer()
     elif ans1 == 'RA':
