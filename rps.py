@@ -39,7 +39,7 @@ class HumanPlayer(Player):
 
     def move(self):
         throw = input("Throw rock, paper, or scissors? ")
-        while throw not in ['rock', 'paper', 'scissors']:
+        while throw.lower() not in ['rock', 'paper', 'scissors']:
             throw = input("Throw rock, paper, or scissors? ")
         return throw
 
