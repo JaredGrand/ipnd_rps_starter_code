@@ -92,13 +92,13 @@ def define_players():
     while ans1 not in ['H', 'RA', 'RE', 'C']:
         ans1 = input("Define Player1: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? ").upper()
     if ans1 == 'H':
-        p1 = 'HumanPlayer'
+        p1 = HumanPlayer()
     elif ans1 == 'RA':
-        p1 = 'RandomPlayer'
+        p1 = RandomPlayer()
     elif ans1 == 'RE':
-        p1 = 'ReflectPlayer'
+        p1 = ReflectPlayer()
     else:
-        p1 = 'CyclePlayer'
+        p1 = CyclePlayer()
     return p1
 
 
