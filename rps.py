@@ -88,8 +88,8 @@ def beats(one, two):
             (one == 'paper' and two == 'rock'))
 
 
-def define_players():
-    str1 = "Define Player: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? "
+def define_players(name):
+    str1 = f"Define Player {name}: (H)uman, (Ra)ndom, (Re)flect, or (C)ycle? "
     ans1 = input(str1).upper()
     while ans1 not in ['H', 'RA', 'RE', 'C']:
         ans1 = input(str1).upper()
@@ -146,7 +146,7 @@ class Game:
 
 
 if __name__ == '__main__':
-    p1 = define_players()
-    p2 = define_players()
+    p1 = define_players(1)
+    p2 = define_players(2)
     game = Game(p1, p2)
     game.play_game()
