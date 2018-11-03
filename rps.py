@@ -89,7 +89,7 @@ def beats(one, two):
 
 
 def define_players(name):
-    str1 = f"Define Player {name}: (H)uman, (Ro)ck, (Ra)ndom, (Re)flect, or (C)ycle? "
+    str1 = f"Player {name}: (H)uman, (Ro)ck, (Ra)ndom, (Re)flect, or (C)ycle? "
     ans1 = input(str1).upper()
     while ans1 not in ['H', 'RO', 'RA', 'RE', 'C']:
         ans1 = input(str1).upper()
