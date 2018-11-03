@@ -12,21 +12,27 @@ in this game"""
 
 
 class Player:
+    """Player class that only throws rock"""
 
     def __init__(self):
         self.wins = 0
 
     def move(self):
+        """Move that throws rock"""
         return 'rock'
 
     def learn(self, my_move, their_move):
+        """Player class passes on learn method"""
         pass
 
     def score(self):
+        """Instance level variable for a players score"""
         self.wins += 1
 
 
 class RandomPlayer(Player):
+    """Subclass that plays randomly"""
+
     def __init__(self):
         self.wins = 0
 
@@ -36,6 +42,7 @@ class RandomPlayer(Player):
 
 
 class HumanPlayer(Player):
+    """Subclass for a human player"""
 
     def move(self):
         throw = input("Throw rock, paper, or scissors? ")
@@ -45,6 +52,7 @@ class HumanPlayer(Player):
 
 
 class ReflectPlayer(Player):
+    """Subclass that 1st plays randomly and then the opponents previous move"""
 
     def __init__(self):
         self.their_move = ''
@@ -62,6 +70,7 @@ class ReflectPlayer(Player):
 
 
 class CyclePlayer(Player):
+    """Subclass that 1st plays randomly and then cycles throw moves"""
 
     def __init__(self):
         self.my_move = ''
@@ -83,12 +92,14 @@ class CyclePlayer(Player):
 
 
 def beats(one, two):
+    """Function that returns True when one beats two"""
     return ((one == 'rock' and two == 'scissors') or
             (one == 'scissors' and two == 'paper') or
             (one == 'paper' and two == 'rock'))
 
 
 def define_players(name):
+    """Function to define which styles are playing"""
     str1 = f"Player {name}: (H)uman, (Ro)ck, (Ra)ndom, (Re)flect, or (C)ycle? "
     ans1 = input(str1).upper()
     while ans1 not in ['H', 'RO', 'RA', 'RE', 'C']:
@@ -107,12 +118,14 @@ def define_players(name):
 
 
 class Game:
+    """Class for gameplay"""
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
         self.wins = 0
 
     def play_round(self):
+        """Function for a single round"""
         move1 = self.p1.move()
         move2 = self.p2.move()
         print(f"Player 1: {move1}  Player 2: {move2}")
@@ -129,6 +142,7 @@ class Game:
         self.p2.learn(move2, move1)
 
     def play_game(self):
+        """Function for a game of multiple rounds"""
         self.p1.wins = 0
         self.p2.wins = 0
         rounds = int(input("How many rounds? "))
