@@ -37,8 +37,7 @@ class RandomPlayer(Player):
         self.wins = 0
 
     def move(self):
-        outcomes = ['rock', 'paper', 'scissors']
-        return random.choice(outcomes)
+        return random.choice(moves)
 
 
 class HumanPlayer(Player):
@@ -63,7 +62,7 @@ class ReflectPlayer(Player):
 
     def move(self):
         if self.their_move == '':
-            throw = random.choice(['rock', 'paper', 'scissor'])
+            throw = random.choice(moves)
         else:
             throw = self.their_move
         return throw
@@ -81,7 +80,7 @@ class CyclePlayer(Player):
 
     def move(self):
         if self.my_move == '':
-            throw = random.choice(['rock', 'paper', 'scissors'])
+            throw = random.choice(moves)
         elif self.my_move == 'rock':
             throw = 'paper'
         elif self.my_move == 'paper':
